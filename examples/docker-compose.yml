@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  logrotate:
+    image: tiredofit/logrotate
+    container_name: logrotate
+    restart: always
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers \
+      - /var/log/docker:/var/log/docker
+    environment:
+      - LOGS_DIRECTORIES=/var/lib/docker/containers /var/log/docker
+      - LOG_FILE_ENDINGS=json xml log
+      - LOGROTATE_INTERVAL=weekly
+      - LOGROTATE_COPIES=8
+      - LOGROTATE_SIZE=10M
+      - LOGROTATE_COMPRESSION=compress
+      - LOGROTATE_DATEFORMAT=-%Y%m%d
+
