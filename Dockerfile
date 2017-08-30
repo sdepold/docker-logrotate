@@ -39,9 +39,11 @@ MAINTAINER Dave Conroy <dave at tiredofit dot ca>
           wget && \
         rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
-COPY install/run.sh /usr/bin/logrotate.d/run.sh
-COPY install/update-logrotate.sh /usr/bin/logrotate.d/update-logrotate.sh
+## Add Files
+  COPY install/run.sh /usr/bin/logrotate.d/run.sh
+  COPY install/update-logrotate.sh /usr/bin/logrotate.d/update-logrotate.sh
 
-ENTRYPOINT ["/usr/bin/logrotate.d/run.sh"]
-VOLUME ["/logrotate-status"]
-CMD ["cron"]
+## Entrypoint Configuration
+  ENTRYPOINT ["/usr/bin/logrotate.d/run.sh"]
+  VOLUME ["/logrotate-status"]
+  CMD ["cron"]
