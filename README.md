@@ -64,7 +64,6 @@ Below is the complete list of available options that can be used to customize yo
 
 | Parameter         | Description                                                    |
 |-------------------|----------------------------------------------------------------|
-
 | `LOG_FILE_ENDINGS` | Which extensions to seach for logs e.g. `json xml log` |
 | `LOGROTATE_INTERVAL` | How often to rotate e.g. `hourly` `daily` `weekly` `monthly` `yearly` |
 | `LOGROTATE_COPIES` | How many copies to keep before deleting e.g. `8` |
